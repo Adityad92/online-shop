@@ -2,7 +2,7 @@ node{
 
     stage('SCM Checkout')
     {
-        git credentialsId: '4cc785e9-441d-4818-a248-2bfb2148004d', url: 'https://github.com/VardhanNS/phpmysql-app.git'
+        git url: 'https://github.com/Adityad92/online-shop.git'
     }
     
     stage('Run Docker Compose File')
@@ -12,19 +12,19 @@ node{
     }
   stage('PUSH image to Docker Hub')
     {
-      /* withCredentials([string(credentialsId: 'DockerHubPassword', variable: 'DHPWD')]) 
+      /* withCredentials([string(credentialsId: 'adicop49', variable: 'flemfjT2@')]) 
         {
-            sh "docker login -u upasanatestdocker -p ${DHPWD}"
+            sh "docker login -u adicop49 -p ${flemfjT2@}"
         }
-        sh 'docker push vardhanns/phpmysql_app'
+        sh 'docker push Adityad92/online-shop'
         */
         //docker.withRegistry( 'https://registry.hub.docker.com', 'DockerHubPassword' ) {
              
-             sh 'sudo docker login -u "upasanatestdocker" -p "Zephyr@17" docker.io'
-             //sh 'sudo docker push upasanatestdocker/mysql'
-             //sh 'sudo docker push upasanatestdocker/job1_web1.0'
-             sh 'sudo docker push upasanatestdocker/job1_web2.0'
-            // sh 'docker push upasanatestdocker/mysql'
+             sh 'sudo docker login -u "adicop49" -p "Zephyr@17" docker.io'
+             //sh 'sudo docker push adicop49/mysql'
+             //sh 'sudo docker push adicop49/job1_web1.0'
+             sh 'sudo docker push adicop49/job1_web2.0'
+            // sh 'docker push adicop49/mysql'
           
     }
 }
